@@ -43,8 +43,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		        .authorizedGrantTypes("client_credentials")
 		        .scopes("api")
 		        .secret(finalSecret)
-		        .accessTokenValiditySeconds(60 * 60 * 8)
-		        .refreshTokenValiditySeconds(60 * 60 * 24 * 7);
+		        .accessTokenValiditySeconds(60 * 60 * 8);
     }
 	
 	/*
