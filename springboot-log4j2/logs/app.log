@@ -1,0 +1,45 @@
+2020-03-04 18:42:04.552 INFO  [main] c.o.d.SpringbootLog4j2Application: Starting SpringbootLog4j2Application on DESKTOP-MHIAUF0 with PID 6576 (D:\study\SpringBootDemo\springboot-log4j2\target\classes started by Dell in D:\study\SpringBootDemo\springboot-log4j2)
+2020-03-04 18:42:04.558 DEBUG [main] c.o.d.SpringbootLog4j2Application: Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-04 18:42:04.559 INFO  [main] c.o.d.SpringbootLog4j2Application: No active profile set, falling back to default profiles: default
+2020-03-04 18:42:05.307 INFO  [main] o.s.b.w.e.t.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-03-04 18:42:05.327 INFO  [main] o.a.c.h.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-04 18:42:05.328 INFO  [main] o.a.c.c.StandardService: Starting service [Tomcat]
+2020-03-04 18:42:05.329 INFO  [main] o.a.c.c.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-04 18:42:05.426 INFO  [main] o.a.c.c.C.[.[.[/]: Initializing Spring embedded WebApplicationContext
+2020-03-04 18:42:05.426 INFO  [main] o.s.w.c.ContextLoader: Root WebApplicationContext: initialization completed in 780 ms
+2020-03-04 18:42:05.583 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-04 18:42:05.710 INFO  [main] o.a.c.h.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8080"]
+2020-03-04 18:42:05.745 INFO  [main] o.s.b.w.e.t.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-04 18:42:05.748 INFO  [main] c.o.d.SpringbootLog4j2Application: Started SpringbootLog4j2Application in 1.467 seconds (JVM running for 3.8)
+2020-03-04 18:42:50.135 INFO  [http-nio-8080-exec-1] o.a.t.u.h.p.Cookie: A cookie header was received [1567656067; Hm_lvt_bd959bade7920c3b3b8a25a8bcc26b5d=1583308209] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-03-04 18:42:50.141 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-04 18:42:50.141 INFO  [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-03-04 18:42:50.148 INFO  [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet: Completed initialization in 7 ms
+2020-03-04 18:43:22.319 INFO  [RMI TCP Connection(9)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin: Application shutdown requested.
+2020-03-04 18:43:22.321 INFO  [RMI TCP Connection(9)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-04 18:43:28.203 INFO  [main] c.o.d.SpringbootLog4j2Application: Starting SpringbootLog4j2Application on DESKTOP-MHIAUF0 with PID 16012 (D:\study\SpringBootDemo\springboot-log4j2\target\classes started by Dell in D:\study\SpringBootDemo\springboot-log4j2)
+2020-03-04 18:43:28.210 DEBUG [main] c.o.d.SpringbootLog4j2Application: Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-04 18:43:28.210 INFO  [main] c.o.d.SpringbootLog4j2Application: No active profile set, falling back to default profiles: default
+2020-03-04 18:43:28.953 INFO  [main] o.s.b.w.e.t.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-03-04 18:43:28.972 INFO  [main] o.a.c.h.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-04 18:43:28.973 INFO  [main] o.a.c.c.StandardService: Starting service [Tomcat]
+2020-03-04 18:43:28.973 INFO  [main] o.a.c.c.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-04 18:43:29.072 INFO  [main] o.a.c.c.C.[.[.[/]: Initializing Spring embedded WebApplicationContext
+2020-03-04 18:43:29.072 INFO  [main] o.s.w.c.ContextLoader: Root WebApplicationContext: initialization completed in 778 ms
+2020-03-04 18:43:29.208 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-04 18:43:29.336 INFO  [main] o.a.c.h.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8080"]
+2020-03-04 18:43:29.360 INFO  [main] o.s.b.w.e.t.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-04 18:43:29.363 INFO  [main] c.o.d.SpringbootLog4j2Application: Started SpringbootLog4j2Application in 1.422 seconds (JVM running for 3.598)
+2020-03-04 18:43:31.986 INFO  [http-nio-8080-exec-2] o.a.t.u.h.p.Cookie: A cookie header was received [1567656067; Hm_lvt_bd959bade7920c3b3b8a25a8bcc26b5d=1583308209] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-03-04 18:43:31.992 INFO  [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-04 18:43:31.992 INFO  [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-03-04 18:43:31.996 INFO  [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet: Completed initialization in 4 ms
+2020-03-04 18:43:32.017 DEBUG [http-nio-8080-exec-2] c.o.d.c.TestController: this is a debug log
+2020-03-04 18:43:32.017 INFO  [http-nio-8080-exec-2] c.o.d.c.TestController: this is a info log
+2020-03-04 18:43:32.017 WARN  [http-nio-8080-exec-2] c.o.d.c.TestController: this is a warn log
+2020-03-04 18:43:32.017 ERROR [http-nio-8080-exec-2] c.o.d.c.TestController: this is a error log
+2020-03-04 18:43:32.017 FATAL [http-nio-8080-exec-2] c.o.d.c.TestController: this is a fatal log
+2020-03-04 20:17:52.699 INFO  [RMI TCP Connection(104)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin: Application shutdown requested.
+2020-03-04 20:17:52.702 INFO  [RMI TCP Connection(104)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
