@@ -16,4 +16,21 @@ public class DepartmentService {
 	public List<Department> findAll(){
 		return departmentMapper.findAll();
 	}
+	
+	public Department getDepartment(int id) {
+		return departmentMapper.getDepartment(id);
+	}
+	
+	public Department insertDepartment(Department department) {
+		departmentMapper.insertDepartment(department);
+		return department;
+	}
+	
+	public int updateDepartment(Department department) {
+		return departmentMapper.updateDepartment(department);
+	}
+	
+	public int deleteDepartment(int id) {
+		return departmentMapper.deleteDepartment(id);
+	}
 }

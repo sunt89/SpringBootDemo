@@ -36,7 +36,7 @@ public class DepartmentController {
 	}
 	
 	@PutMapping
-	public int update(@RequestBody Department department) {
+	public Department update(@RequestBody Department department) {
 		return departmentService.updateDepartment(department);
 	}
 	
