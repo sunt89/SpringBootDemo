@@ -6,7 +6,6 @@ public class MessageInfo {
 	private String type;
 	private String content;
 	
-
 	public String getSourceClientId() {
 		return sourceClientId;
 	}
