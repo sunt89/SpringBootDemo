@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8" />
+
+<title>Demo Chat</title>
+
+<link href="css/bootstrap.css" rel="stylesheet">
+
+<style>
+body {
+	padding: 20px;
+}
+
+#console {
+	height: 400px;
+	overflow: auto;
+}
+
+.username-msg {
+	color: orange;
+}
+
+.connect-msg {
+	color: green;
+}
+
+.disconnect-msg {
+	color: red;
+}
+
+.send-msg {
+	color: #888
+}
+</style>
+
+
+<script src="js/moment.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+<script>
+    var socket;
+    var clientid = 'client01';
+	var targetClientId = 'client02';
+	
+    if(typeof(WebSocket) == "undefined") {
+        console.log("您的浏览器不支持WebSocket");
+    }else{
+        console.log("您的浏览器支持WebSocket");
+        socket = new WebSocket("ws://localhost:8080/ws/" + clientid);
+
+        socket.onopen = function() {
+            output('<span class="connect-msg">客户端已成功连接</span>');
+        };
+
+        socket.onmessage = function(msg) {
+        	var message = JSON.parse(msg.data);
+        	output('<span class="username-msg">' + message.sourceClientId
+    				+ ':</span> ' + message.content);
+        };
+        //关闭事件
+        socket.onclose = function() {
+        	output('<span class="disconnect-msg">客户端已断开连接</span>');
+        };
+		
+        socket.onerror = function() {
+            console.log("Socket发生了错误");
+        }
+    }
+    
+    function output(message) {
+		var currentTime = "<span class='time'>"
+				+ moment().format('HH:mm:ss.SSS') + "</span>";
+		var element = $("<div>" + currentTime + " " + message + "</div>");
+		$('#console').prepend(element);
+	}
+    
+    function sendDisconnect() {
+		socket.close();
+	}
+
+	function sendMessage() {
+		var message = $('#msg').val();
+		$('#msg').val('');
+
+		var jsonObject = {
+			sourceClientId : clientid,
+			targetClientId : targetClientId,
+			type : 'chat',
+			content : message
+		};
+		socket.send(JSON.stringify(jsonObject));
+	}
+    
+    $(document).keydown(function(e) {
+		if (e.keyCode == 13) {
+			$('#send').click();
+		}
+	});
+</script>
+</head>
+<body>
+	<h1>Demo Chat-client01</h1>
+	<br />
+	<div id="console" class="well"></div>
+	<form class="well form-inline" οnsubmit="return false;">
+		<input id="msg" class="input-xlarge" type="text"
+			placeholder="Type something..." />
+		<button type="button" onClick="sendMessage()" class="btn" id="send">Send</button>
+		<button type="button" onClick="sendDisconnect()" class="btn">Disconnect</button>
+	</form>
+</body>
+</html>
