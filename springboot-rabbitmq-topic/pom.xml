@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.opfly</groupId>
-	<artifactId>springboot-websocket-stomp-security</artifactId>
+	<artifactId>springboot-rabbitmq-topic</artifactId>
 	<version>0.0.1</version>
-	<name>springboot-websocket-stomp-security</name>
+	<name>springboot-rabbitmq-topic</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -21,20 +21,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework.security.oauth.boot</groupId>
-		    <artifactId>spring-security-oauth2-autoconfigure</artifactId>
-		    <version>2.2.5.RELEASE</version>
+			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
 
 		<dependency>
@@ -47,6 +38,11 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
