@@ -27,15 +27,15 @@ import org.springframework.stereotype.Component;
 */
 
 /*@RabbitListener(bindings=@QueueBinding(
-		value=@Queue(value="${mq.config.queue.news}", autoDelete="true"),
+		value=@Queue(value="${mq.config.queue.info}", autoDelete="true"),
 		exchange=@Exchange(value="${mq.config.exchange}", type=ExchangeTypes.DIRECT),
-		key="${mq.config.queue.news.routing.key}"
+		key="${mq.config.queue.info.routing.key}"
 		))*/
-@RabbitListener(queues = {"${mq.config.queue.news}"})
 @Component
-public class NewsReceiver {
+@RabbitListener(queues= {"${mq.config.queue.info}"})
+public class InfoReceiver {
 	@RabbitHandler
 	public void process(String message) {
-		System.out.println("News Receive: " + message);
+		System.out.println("Info Log Receive: " + message);
 	}
 }

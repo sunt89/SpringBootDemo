@@ -13,11 +13,11 @@ public class MessageSender {
 	@Autowired
 	private RabbitConfig rabbitConfig;
 	
-	public void sendNews(String msg){
-		this.rabbitTemplate.convertAndSend(rabbitConfig.getExchange(), rabbitConfig.getNewsRoutingkey(), msg);
+	public void sendInfo(String msg){
+		this.rabbitTemplate.convertAndSend(rabbitConfig.getExchange(), rabbitConfig.getInfoRoutingkey(), msg);
 	}
 	
-	public void sendAds(String msg){
-		this.rabbitTemplate.convertAndSend(rabbitConfig.getExchange(), rabbitConfig.getAdsRoutingkey(), msg);
+	public void sendError(String msg){
+		this.rabbitTemplate.convertAndSend(rabbitConfig.getExchange(), rabbitConfig.getErrorRoutingkey(), msg);
 	}
 }

@@ -17,8 +17,8 @@ public class DirectTest {
 	@Test
 	public void send() throws InterruptedException {
 		for (int i = 0; i < 10; i++) {
-			messageSender.sendNews("news " + i);
-			messageSender.sendAds("ads " + i);
+			messageSender.sendInfo("[info]" + i);
+			messageSender.sendError("[error]" + i);
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {

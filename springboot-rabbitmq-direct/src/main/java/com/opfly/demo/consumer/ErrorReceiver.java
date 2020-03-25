@@ -27,15 +27,15 @@ import org.springframework.stereotype.Component;
 */
 
 /*@RabbitListener(bindings=@QueueBinding(
-		value=@Queue(value="${mq.config.queue.ads}", autoDelete="true"),
+		value=@Queue(value="${mq.config.queue.error}", autoDelete="true"),
 		exchange=@Exchange(value="${mq.config.exchange}", type=ExchangeTypes.DIRECT),
-		key="${mq.config.queue.ads.routing.key}"
+		key="${mq.config.queue.error.routing.key}"
 		))*/
+@RabbitListener(queues = {"${mq.config.queue.error}"})
 @Component
-@RabbitListener(queues= {"${mq.config.queue.ads}"})
-public class AdsReceiver {
+public class ErrorReceiver {
 	@RabbitHandler
 	public void process(String message) {
-		System.out.println("Ads Receive: " + message);
+		System.out.println("Error Log Receive: " + message);
 	}
 }
