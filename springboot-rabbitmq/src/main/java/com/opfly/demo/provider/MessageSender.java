@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import com.opfly.demo.config.RabbitMQConfig;
+import com.opfly.demo.pojo.User;
 
 @Component
 public class MessageSender {
@@ -15,6 +16,12 @@ public class MessageSender {
 	public void send(String msg) {
 		if (!StringUtils.isEmpty(msg)){
 			rabbitTemplate.convertAndSend(RabbitMQConfig.QUEUE_NAME, msg);
+		}
+	}
+	
+	public void sendUser(User user) {
+		if (user != null){
+			rabbitTemplate.convertAndSend(RabbitMQConfig.OBJ_QUEUE_NAME, user);
 		}
 	}
 }
