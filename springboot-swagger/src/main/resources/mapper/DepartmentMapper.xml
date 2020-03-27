@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.opfly.demo.mapper.DepartmentMapper">
+	<!-- findAll -->
+    <select id="findAll" resultType="Department">
+        select * from dept
+    </select>
+    <select id="getDepartment" resultType="Department">
+        select * from dept where id = #{id}
+    </select>
+    <insert id="insertDepartment" useGeneratedKeys="true" keyProperty="id" parameterType="Department">
+    	insert into dept(name, location) values(#{name}, #{location})
+    </insert>
+    <update id="updateDepartment">
+    	update dept
+    	<set>
+    		<if test="name != null">name=#{name},</if>
+    		<if test="location != null">location=#{location}</if>
+    	</set>
+    	where id=#{id}
+    </update>
+    <delete id="deleteDepartment" parameterType="int">
+    	delete from dept where id=#{id}
+    </delete>
+</mapper>
