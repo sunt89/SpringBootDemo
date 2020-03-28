@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8" />
+
+<title>Demo Chat</title>
+
+<link href="css/bootstrap.css" rel="stylesheet">
+
+<style>
+body {
+	padding: 20px;
+}
+
+#console {
+	height: 400px;
+	overflow: auto;
+}
+
+.username-msg {
+	color: orange;
+}
+
+.connect-msg {
+	color: green;
+}
+
+.disconnect-msg {
+	color: red;
+}
+
+.send-msg {
+	color: #888
+}
+</style>
+
+
+<script src="js/moment.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="js/stomp.min.js"></script>
+<script src="js/sockjs.min.js"></script>
+
+<script>
+    var stompClient = null;
+    
+    function connect(){
+    	var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiZGVtbyJdLCJ1c2VyX25hbWUiOiJ1c2VyXzEiLCJzY29wZSI6WyJhcGkiXSwiZXhwIjoxNTg1NDA3NDE2LCJhdXRob3JpdGllcyI6WyJVU0VSIl0sImp0aSI6Ijk0ZGY1M2JkLWU1Y2YtNDg5Ny05YTFmLTQzOTZkNDY4NTI0MSIsImNsaWVudF9pZCI6ImNsaWVudDAxIn0.SG85hsnAprCg9WdJp5MflHBuSzrfuxtSD159SthE9nA";
+    	var endpoint = '/socket?access_token=' + token;
+    	var socket = new SockJS(endpoint);
+    	stompClient = Stomp.over(socket);
+
+    	var headers = {};
+    	stompClient.connect(headers, function(frame){
+    		output("client01连接成功");
+    		//建立连接后的回调
+    		stompClient.subscribe('/user/topic/*.chat', function(data){
+    			output(data.body);
+    		});
+    		stompClient.subscribe('/topic/*.chat', function(data){
+    			output(data.body);
+    		});
+    	},
+    	function(errorCallback){
+    		//连接断开时尝试发起重连
+    		output("client01断开连接");
+    		console.log(errorCallback);
+    		reconnect();
+    	});
+    }
+    
+    function reconnect() {
+        setTimeout(function () {
+            connect();
+        }, 3000);
+    }
+    
+    function disconnect() {
+    	if (stompClient != null){
+    		output("client01断开连接");
+    		stompClient.disconnect();
+    	}
+    }
+    
+    function output(message) {
+		var currentTime = "<span class='time'>"
+				+ moment().format('HH:mm:ss.SSS') + "</span>";
+		var element = $("<div>" + currentTime + " " + message + "</div>");
+		$('#console').prepend(element);
+	}
+    
+    function sendDisconnect() {
+		socket.close();
+	}
+
+	function sendMessage() {
+		var message = $('#msg').val();
+		$('#msg').val('');
+		if (stompClient != null){
+    		stompClient.send("/request/sendToUser", {}, message);
+    	}
+	}
+    
+</script>
+</head>
+<body>
+	<h1>Demo Chat-client01</h1>
+	<br />
+	<div id="console" class="well"></div>
+	<form class="well form-inline" οnsubmit="return false;">
+		<input id="msg" class="input-xlarge" type="text"
+			placeholder="Type something..." />
+		<button type="button" onClick="sendMessage()" class="btn" id="send">Send</button>
+		<button type="button" onClick="connect()" class="btn">Connect</button>
+		<button type="button" onClick="disconnect()" class="btn">Disconnect</button>
+	</form>
+</body>
+</html>
