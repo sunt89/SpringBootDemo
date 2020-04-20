@@ -12,6 +12,7 @@
 | [springboot-data-validation](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-data-validation) | [Spring Boot参数校验并使用全局异常捕获返回统一错误信息](https://www.opfly.cn/2019/01/20/springboot/springboot-data-validation/) |
 | [springboot-log4j2](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-log4j2) | [Spring Boot使用log4j2记录日志](https://www.opfly.cn/2019/01/25/log/springboot-log4j2/) |
 | [springboot-email](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-email) | [Spring Boot发送邮件](https://www.opfly.cn/2019/01/26/springboot/springboot-email/) |
+| [springboot-email-imap](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-email-imap) | [Spring Boot使用IMAP协议接收邮件](https://www.opfly.cn/2019/01/27/springboot/springboot-email-imap/) |
 | [springboot-redis-starter](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-redis-starter) | [Spring Boot Redis入门](https://www.opfly.cn/2019/01/28/redis/springboot-redis-starter/) |
 | [springboot-redis-transaction](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-redis-transaction) | [Spring Boot使用Redis事务](https://www.opfly.cn/2019/01/31/redis/springboot-redis-transaction/) |
 | [springboot-redis-pipeline](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-redis-pipeline) | [Spring Boot使用Redis流水线](https://www.opfly.cn/2019/02/01/redis/springboot-redis-pipeline/) |
@@ -23,7 +24,9 @@
 | [springboot-rabbitmq-direct](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-rabbitmq-direct) | [Spring Boot RabbitMQ使用Direct类型交换器](https://www.opfly.cn/2019/08/05/rabbitmq/springboot-rabbitmq-direct/) |
 | [springboot-rabbitmq-topic](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-rabbitmq-topic) | [Spring Boot RabbitMQ使用Topic类型交换器](https://www.opfly.cn/2019/08/08/rabbitmq/springboot-rabbitmq-topic/) |
 | [springboot-rabbitmq-fanout](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-rabbitmq-fanout) | [Spring Boot RabbitMQ使用Fanout类型交换器](https://www.opfly.cn/2019/08/10/rabbitmq/springboot-rabbitmq-fanout/) |
+| [springboot-rabbitmq-headers](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-rabbitmq-headers) | [Spring Boot RabbitMQ使用Headers类型交换器](https://www.opfly.cn/2019/08/13/rabbitmq/springboot-rabbitmq-headers/) |
 | [springboot-rabbitmq-confirm](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-rabbitmq-confirm) | [Spring Boot RabbitMQ消息确认](https://www.opfly.cn/2019/08/15/rabbitmq/springboot-rabbitmq-confirm/) |
+| [springboot-rabbitmq-delayqueue](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-rabbitmq-delayqueue) | [Spring Boot RabbitMQ延迟队列](https://www.opfly.cn/2019/08/18/rabbitmq/springboot-rabbitmq-delayqueue/) |
 | [springboot-oauth2-authserver](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-oauth2-authserver) | [Spring Security OAuth授权服务器](https://www.opfly.cn/2019/10/09/springsecurity/springboot-oauth2-authserver/)  |
 | [springboot-oauth2-resourceserver](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-oauth2-resourceserver) | [Spring Security OAuth资源服务器](https://www.opfly.cn/2019/10/11/springsecurity/springboot-oauth2-resourceserver/) |
 | [springboot-oauth2-authserver-custom](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-oauth2-authserver-custom) | [OAuth授权服务器功能扩展和自定义配置](https://www.opfly.cn/2019/10/13/springsecurity/springboot-oauth2-authserver-custom/) |
@@ -32,3 +35,6 @@
 | [springboot-websocket-stomp-security](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-websocket-stomp-security) | [Spring Boot 使用OAuth实现对WebSocket的认证](https://www.opfly.cn/2019/10/23/websocket/springboot-websocket-stomp-security/) |
 | [springboot-websocket-stomp-rabbitmq](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-websocket-stomp-rabbitmq) | [Spring Boot WebSocket使用RabbitMQ作为STOMP消息代理](https://www.opfly.cn/2019/10/25/websocket/springboot-websocket-stomp-rabbitmq/) |
 | [springboot-websocket-stomp-rabbitmq-sendtouser](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-websocket-stomp-rabbitmq-sendtouser) | [Spring Boot WebSocket使用RabbitMQ作为STOMP消息代理发送消息给指定用户](https://www.opfly.cn/2019/10/27/websocket/springboot-websocket-stomp-rabbitmq-sendtouser/) |
+| [springboot-mongodb-starter](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-mongodb-starter) | [Spring Boot MongoDB入门](https://www.opfly.cn/2019/11/03/mongodb/springboot-mongodb-starter/) |
+| [springboot-mongodb-jpa](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-mongodb-jpa) | [Spring Boot 使用JPA操作MongoDB](https://www.opfly.cn/2019/11/05/mongodb/springboot-mongodb-jpa/) |
+| [springboot-mongodb-file](https://github.com/sunt89/SpringBootDemo/tree/master/springboot-mongodb-file) | [Spring Boot 使用MongoDB实现简单的存储服务器](https://www.opfly.cn/2019/11/07/mongodb/springboot-mongodb-fileupload/) |
