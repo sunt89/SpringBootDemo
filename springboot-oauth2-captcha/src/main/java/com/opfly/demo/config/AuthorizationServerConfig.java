@@ -53,8 +53,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	/*
 	 * 将token保存在内存中
 	 */
-	//使用Reference Token
-	@Bean
+	/*//使用Reference Token
 	public TokenStore tokenStore() {
         return new InMemoryTokenStore();
     }
@@ -64,10 +63,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     	endpoints
                 .tokenStore(tokenStore())
                 .authenticationManager(authenticationManager);
-    }
+    }*/
 	
 	//使用Json Web Token
-	/*@Bean
+	@Bean
     public TokenStore tokenStore() {
         return new JwtTokenStore(accessTokenConverter());
     }
@@ -86,7 +85,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .accessTokenConverter(accessTokenConverter())
                 .authenticationManager(authenticationManager)
                 .userDetailsService(userDetailService);
-    }*/
+    }
 	
 	@Override
     public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
