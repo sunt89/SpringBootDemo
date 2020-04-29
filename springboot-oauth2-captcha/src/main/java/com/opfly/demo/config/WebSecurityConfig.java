@@ -45,15 +45,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
         AuthenticationManager manager = super.authenticationManagerBean();
         return manager;
     }
-	
-	/*
-	 * 重写configure，配置访问策略
-	 */
-	@Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.requestMatchers().anyRequest()
-            .and()
-            .authorizeRequests()
-            .antMatchers("/oauth/*").permitAll();
-    }
 }

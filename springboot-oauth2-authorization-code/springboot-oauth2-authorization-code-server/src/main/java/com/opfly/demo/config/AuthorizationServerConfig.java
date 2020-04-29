@@ -32,22 +32,24 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
     	String finalSecret = passwordEncoder.encode("123456");
-        //配置两个客户端,一个用于password认证一个用于client认证
+        //配置两个客户端,一个用于authorization code认证一个用于implicit认证
     	clients.inMemory()
 				.withClient("client01")
 		        .resourceIds(DEMO_RESOURCE_ID)
-		        .authorizedGrantTypes("password", "refresh_token")
+		        .authorizedGrantTypes("authorization_code", "refresh_token")
 		        .scopes("api")
 		        .secret(finalSecret)
 		        .accessTokenValiditySeconds(60 * 60 * 8)
 		        .refreshTokenValiditySeconds(60 * 60 * 24 * 7)
+		        .redirectUris("http://localhost:8081/callback")
 		        .and()
 		        .withClient("client02")
 		        .resourceIds(DEMO_RESOURCE_ID)
-		        .authorizedGrantTypes("client_credentials")
+		        .authorizedGrantTypes("implicit")
 		        .scopes("api")
 		        .secret(finalSecret)
-		        .accessTokenValiditySeconds(60 * 60 * 8);
+		        .accessTokenValiditySeconds(60 * 60 * 8)
+		        .redirectUris("http://localhost:8081/oauth2_implicit_callback.html");
     }
 	
 	/*
@@ -64,7 +66,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     	endpoints
                 .tokenStore(tokenStore())
                 .authenticationManager(authenticationManager)
-                .userDetailsService(userDetailService); //使用refresh_token时需要添加
+                .userDetailsService(userDetailService);
     }
 	
 	//使用Json Web Token

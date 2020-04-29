@@ -21,9 +21,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
     public void configure(HttpSecurity http) throws Exception {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
             .and()
-            .requestMatchers().anyRequest()
-            .and()
-            .anonymous()
+            .requestMatchers()
+            .antMatchers("/api/**")
             .and()
             .authorizeRequests()
             .antMatchers("/api/captcha").permitAll()

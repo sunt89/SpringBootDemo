@@ -53,7 +53,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	/*
 	 * 将token保存在内存中
 	 */
-	/*//使用Reference Token
+	//使用Reference Token
+	@Bean
 	public TokenStore tokenStore() {
         return new InMemoryTokenStore();
     }
@@ -62,11 +63,12 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
     	endpoints
                 .tokenStore(tokenStore())
-                .authenticationManager(authenticationManager);
-    }*/
+                .authenticationManager(authenticationManager)
+                .userDetailsService(userDetailService); //使用refresh_token时需要添加
+    }
 	
 	//使用Json Web Token
-	@Bean
+	/*@Bean
     public TokenStore tokenStore() {
         return new JwtTokenStore(accessTokenConverter());
     }
@@ -85,13 +87,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .accessTokenConverter(accessTokenConverter())
                 .authenticationManager(authenticationManager)
                 .userDetailsService(userDetailService);
-    }
+    }*/
 	
 	@Override
     public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
     	oauthServer
         .tokenKeyAccess("permitAll()")
-        .checkTokenAccess("permitAll()")
+        .checkTokenAccess("isAuthenticated()")
         .allowFormAuthenticationForClients();
     }
 }
